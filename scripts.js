@@ -133,4 +133,44 @@ function checkWin() {
     // Recargar la página para iniciar un nuevo juego
     window.location.reload();
   });
+
+  // Agregar el botón para dar vuelta todas las cartas si el jugador pierde
+  // Agregar el botón para dar vuelta todas las cartas si el jugador pierde
+  if (!hasWon) {
+    const flipAllCardsButton = document.createElement("button");
+    flipAllCardsButton.textContent = "Dar vuelta todas las cartas";
+    flipAllCardsButton.classList.add("modal-boton");
+    gameOverModal
+      .querySelector(".modal-content")
+      .appendChild(flipAllCardsButton);
+
+    flipAllCardsButton.addEventListener("click", () => {
+      // Ocultar el modal
+      gameOverModal.style.display = "none";
+
+      // Dar vuelta todas las cartas
+      const cards = document.querySelectorAll(".card");
+      cards.forEach((card) => {
+        card.classList.add("flipped");
+      });
+
+      // Eliminar el elemento h1 de intentos restantes
+      const intentosRestantes = document.querySelector("h1");
+      intentosRestantes.remove();
+
+      // Crear el botón "Jugar de nuevo"
+      const playAgainButton = document.createElement("button");
+      playAgainButton.textContent = "Jugar de nuevo";
+      playAgainButton.classList.add("modal-boton");
+
+      // Agregar el botón en el lugar donde estaba el elemento h1
+      const board = document.getElementById("board");
+      board.parentNode.insertBefore(playAgainButton, board);
+
+      // Agregar un evento de clic para recargar la página
+      playAgainButton.addEventListener("click", () => {
+        window.location.reload();
+      });
+    });
+  }
 }
