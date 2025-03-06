@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Juego de Cartas</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <h1>Intentos Restantes: 5</h1>
+    <div class="board" id="board"></div>
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2  class="modal-text">Encontrá los 3 logos de Interassist para ganar</h2>
+            <div class="logos">
+                <img src="img/1.png" alt="Logo 1">
+                <img src="img/2.png" alt="Logo 2">
+                <img src="img/3.png" alt="Logo 3">
+            </div>
+            <p class="modal-jugar">¿Listo Para Empezar a Jugar?</p>
+            <button id="btn-listo" class="modal-boton">¡Listo!</button>
+        </div>
+    </div>
+    <p id="message"></p>
+    <!-- Modal de fin de juego -->
+    <div id="game-over-modal" class="game-over-modal">
+        <div class="modal-content">
+        <h2 id="game-over-message" class="modal-text"></h2>
+        <button id="play-again-button" class="modal-boton">Jugar de nuevo</button>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
