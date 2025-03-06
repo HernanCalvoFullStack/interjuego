@@ -18,7 +18,7 @@ h1 {
 
 .board {
   display: grid;
-  grid-template-columns: repeat(4, 180px);
+  grid-template-columns: repeat(3, 180px);
   gap: 20px;
   justify-content: center;
   margin-top: 40px;
